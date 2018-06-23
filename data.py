@@ -33,7 +33,7 @@ def loader(batch_size = 8, path = default_path):
             images.append(output)
             counter = counter + 1
             output_name = output_dir + '/output' + str(counter) + '_' + str(ksize) + '.jpg'
-            cv2.imwrite(output_name, output)
+            #cv2.imwrite(output_name, output)
             if len(images) == batch_size:
                 yield images
                 images.clear()
