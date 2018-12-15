@@ -50,8 +50,8 @@ def main():
     #specify the outputs
     #now a model has been created based on our architecture
 
-    for i,layer in enumerate(new_model.layers):
-        print(i,layer.name)
+    #for i,layer in enumerate(new_model.layers):
+    #    print(i,layer.name)
 
     for layer in new_model.layers[:20]:
         layer.trainable=False
@@ -104,6 +104,7 @@ def main():
                    epochs=5,
                    callbacks=[checkpoint])
     
+    new_model.evaluate_generator(generator=valid_generator)
     
     
 if __name__ == '__main__':

@@ -38,9 +38,9 @@ def loader(batch_size = 8, path = default_path, output_dir = 'blur', orig_dir = 
             #print('file: %s ksize %d' % (file, ksize))
             images.append(output)
             counter = counter + 1
-            output_name = output_dir + '/motion' + str(counter) + '_' + str(ksize) + '.jpg'
+            output_name = output_dir + '/blur_' + str(counter) + '_' + str(ksize) + '.jpg'
             cv2.imwrite(output_name, output)
-            output_name = orig_dir + '/' + Path(file).name
+            output_name = orig_dir + '/nonblur_' + str(counter) + '_' + Path(file).name
             cv2.imwrite(output_name, img)
             if len(images) == batch_size:
                 yield images
